@@ -10,7 +10,7 @@ from config import Config
 class RedisClient:
 
     def __init__(
-        self,db, host=Config.REDIS_HOST, port=Config.REDIS_PORT, password=Config.REDIS_PASSWORD
+        self,db=Config.REDIS_DB, host=Config.REDIS_HOST, port=Config.REDIS_PORT, password=Config.REDIS_PASSWORD
     ):
         conn_pool = redis.ConnectionPool(
             db=db,
