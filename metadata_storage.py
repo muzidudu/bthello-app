@@ -4,6 +4,7 @@ import threading
 from time import sleep, time
 from common.database import RedisClients,RedisClients1,ElasticsClients
 from common.utils import get_logger
+import json
 
 class MetadataStorage:
     def __init__(self,task_time):
@@ -35,7 +36,7 @@ class MetadataStorage:
                         "file_num": v['file_num'],
                         "file_type": v['file_type'],
                         "hot": v['hot'],
-                        "file_list": str(v['file_list']),
+                        "file_list": json.dumps(v['file_list']),
                         "status": v['status'],
                     }
                 ]
